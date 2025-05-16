@@ -43,6 +43,7 @@ const Portfolio = () => {
     {
       title: "Portfolio Website",
       description: "Responsive developer portfolio using React and Tailwind.",
+      gitHubLink: "https://github.com/sameera0406/portfolio",
       challenges: [
         "Learning new technologies and best practices.",
         "Ensuring the site is responsive and user-friendly.",
@@ -60,34 +61,29 @@ const Portfolio = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-white to-blue-100 p-6">
+      {/* Header */}
       <header className="flex flex-col items-center md:flex-row md:items-start md:justify-center gap-6 mb-10">
-  {/* Image */}
-  <img
-    src="\sameera-profile.jpg"
-    alt="Ragha Sameera Vasa"
-    className="w-32 h-32 rounded-full object-cover border-4 border-indigo-300 shadow-lg"
-  />
+        <img
+          src="\sameera-profile.jpg"
+          alt="Ragha Sameera Vasa"
+          className="w-32 h-32 rounded-full object-cover border-4 border-indigo-300 shadow-lg"
+        />
+        <div className="text-center md:text-left z-10">
+          <h1 className="text-4xl font-extrabold text-indigo-800 tracking-tight mb-2">
+            Ragha Sameera Vasa
+          </h1>
+          <p className="text-lg text-gray-700">
+            Frontend Developer | Full-Stack Learner | AI Explorer
+          </p>
+          <p className="mt-2 text-sm md:text-base text-gray-600 max-w-xl">
+            Passionate about crafting engaging web experiences and building impactful digital solutions through the blend of creativity and code.
+          </p>
+        </div>
+      </header>
 
-  {/* Name and Title */}
-  <div className="text-center md:text-left z-10">
-  <h1 className="text-4xl font-extrabold text-indigo-800 tracking-tight mb-2">
-    Ragha Sameera Vasa
-  </h1>
-  <p className="text-lg text-gray-700">
-    Frontend Developer | Full-Stack Learner | AI Explorer
-  </p>
-  <p className="mt-2 text-sm md:text-base text-gray-600 max-w-xl">
-  Passionate about crafting engaging web experiences and building impactful digital solutions through the blend of creativity and code.
-  </p>
-</div>
-
-</header>
-
-      {/* Education Section */}
+      {/* Education */}
       <section className="mb-16 max-w-4xl mx-auto">
-        <h2 className="text-3xl font-semibold text-indigo-700 text-center mb-8">
-          Education
-        </h2>
+        <h2 className="text-3xl font-semibold text-indigo-700 text-center mb-8">Education</h2>
         <div className="bg-white p-6 shadow rounded-xl text-gray-800">
           <h3 className="text-xl font-bold text-indigo-600 mb-2">
             Bachelor of Technology (B.Tech)
@@ -96,7 +92,6 @@ const Portfolio = () => {
           <p className="mb-1">GITAM University, Visakhapatnam</p>
           <p className="mb-1">2023 – Present (Currently in 2nd Year)</p>
           <p className="mb-4 font-semibold text-indigo-600">GPA: 9.64 / 10</p>
-
           <ul className="list-disc pl-5 space-y-2">
             <li>Actively building skills in web development and AI/ML.</li>
             <li>Developed and showcased multiple technical projects (see below).</li>
@@ -104,79 +99,29 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Skills Section */}
+      {/* Skills */}
       <section className="mb-16 max-w-5xl mx-auto">
-        <h2 className="text-3xl font-semibold text-indigo-700 text-center mb-8">
-          Skills
-        </h2>
-
+        <h2 className="text-3xl font-semibold text-indigo-700 text-center mb-8">Skills</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="bg-white p-6 shadow rounded-xl">
-            <h3 className="text-xl font-bold text-indigo-600 mb-4">Frontend</h3>
-            <ul className="space-y-2">
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JavaScript</li>
-              <li>Web3.js — Intermediate</li>
-              <li>React — Intermediate</li>
-              <li>Tailwind CSS — Intermediate</li>
-            </ul>
-          </div>
-
-          <div className="bg-white p-6 shadow rounded-xl">
-            <h3 className="text-xl font-bold text-indigo-600 mb-4">Backend</h3>
-            <ul className="space-y-2">
-              <li>Node.js — Intermediate</li>
-              <li>Express.js — Intermediate</li>
-              <li>REST API Development</li>
-              <li>Firebase Authentication</li>
-            </ul>
-          </div>
-
-          <div className="bg-white p-6 shadow rounded-xl">
-            <h3 className="text-xl font-bold text-indigo-600 mb-4">AI / ML</h3>
-            <ul className="space-y-2">
-              <li>Python — Intermediate</li>
-              <li>Scikit-learn</li>
-              <li>Pandas</li>
-              <li>NumPy</li>
-            </ul>
-          </div>
-
-          <div className="bg-white p-6 shadow rounded-xl">
-            <h3 className="text-xl font-bold text-indigo-600 mb-4">Languages</h3>
-            <ul className="space-y-2">
-              <li>C — Advanced</li>
-              <li>Java — Advanced</li>
-              <li>Python — Intermediate</li>
-            </ul>
-          </div>
-
-          <div className="bg-white p-6 shadow rounded-xl">
-            <h3 className="text-xl font-bold text-indigo-600 mb-4">Tools</h3>
-            <ul className="space-y-2">
-              <li>Git / GitHub</li>
-              <li>Cursor</li>
-              <li>Ethereum</li>
-            </ul>
-          </div>
+          <SkillCard title="Frontend" skills={["HTML", "CSS", "JavaScript", "Web3.js — Intermediate", "React — Intermediate", "Tailwind CSS — Intermediate"]} />
+          <SkillCard title="Backend" skills={["Node.js — Intermediate", "Express.js — Intermediate", "REST API Development", "Firebase Authentication"]} />
+          <SkillCard title="AI / ML" skills={["Python — Intermediate", "Scikit-learn", "Pandas", "NumPy"]} />
+          <SkillCard title="Languages" skills={["C — Advanced", "Java — Advanced", "Python — Intermediate"]} />
+          <SkillCard title="Tools" skills={["Git / GitHub", "Cursor", "Ethereum"]} />
         </div>
       </section>
 
-      {/* Projects Section */}
+      {/* Projects */}
       <section className="mb-16 max-w-6xl mx-auto">
-        <h2 className="text-3xl font-semibold text-indigo-700 text-center mb-8">
-          Projects
-        </h2>
-
-        <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <h2 className="text-3xl font-semibold text-indigo-700 text-center mb-8">Projects</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, idx) => (
             <ProjectCard key={idx} project={project} />
           ))}
-        </section>
+        </div>
       </section>
 
-      {/* Leadership & Volunteering Section */}
+      {/* Leadership & Volunteering */}
       <section className="mb-16 max-w-4xl mx-auto">
         <h2 className="text-3xl font-semibold text-indigo-700 text-center mb-8">
           Leadership & Volunteering
@@ -191,62 +136,56 @@ const Portfolio = () => {
               activities to foster a growth mindset.
             </p>
           </div>
-
           <div>
             <h3 className="text-xl font-bold text-indigo-600 mb-1">
               EduYouthMeet 2024
             </h3>
             <p>
               <strong>Core Team Member & Organizer</strong> – Played a key role in
-              planning and executing South India's largest youth conference. Led
-              outreach initiatives, coordinated speakers and volunteers, and managed
-              event logistics for over 1500 participants.
+              planning and executing one of the largest youth development events on campus.
             </p>
           </div>
         </div>
       </section>
 
       <section className="mb-16 max-w-4xl mx-auto text-center">
-  <h2 className="text-3xl font-semibold text-indigo-700 mb-6">
-    Personal Interests
-  </h2>
+        <h2 className="text-3xl font-semibold text-indigo-700 mb-6">
+          Personal Interests
+        </h2>
 
-  <div className="bg-white p-6 shadow rounded-xl text-gray-800 text-left">
-    <p className="mb-4">
-      When I am not engaged in technology, I dedicate time to several enriching
-      activities that contribute to my personal growth:
-    </p>
-    <ul className="list-disc list-inside space-y-3">
-      <li>
-        <strong>Music:</strong> I enjoy a wide variety of music genres, which help me stay relaxed.
-      </li>
-      <li>
-        <strong>Kuchipudi Dance:</strong> I am learning Kuchipudi, a classical Indian dance form,
-        which allows me to explore rhythm, storytelling, and cultural heritage.
-      </li>
-      <li>
-        <strong>Reading:</strong> I have a passion for reading, ranging from technology updates
-        to interesting facts, which keeps me constantly learning.
-      </li>
-      <li>
-        <strong>Films:</strong> Watching films is a way for me to relax and gain new perspectives
-        by experiencing diverse stories and cultures.
-      </li>
-    </ul>
-  </div>
-</section>
+        <div className="bg-white p-6 shadow rounded-xl text-gray-800 text-left">
+          <p className="mb-4">
+            When I am not engaged in technology, I dedicate time to several enriching
+            activities that contribute to my personal growth:
+          </p>
+          <ul className="list-disc list-inside space-y-3">
+            <li>
+              <strong>Music:</strong> I enjoy a wide variety of music genres, which help me stay relaxed.
+            </li>
+            <li>
+              <strong>Kuchipudi Dance:</strong> I am learning Kuchipudi, a classical Indian dance form,
+              which allows me to explore rhythm, storytelling, and cultural heritage.
+            </li>
+            <li>
+              <strong>Reading:</strong> I have a passion for reading, ranging from technology updates
+              to interesting facts, which keeps me constantly learning.
+            </li>
+            <li>
+              <strong>Films:</strong> Watching films is a way for me to relax and gain new perspectives
+              by experiencing diverse stories and cultures.
+            </li>
+          </ul>
+        </div>
+      </section>
 
-
-      {/* Footer */}
-      <footer className="text-center text-gray-500 mb-8">
-        &copy; 2025 Ragha Sameera Vasa. All rights reserved.
-      </footer>
     </div>
   );
 };
 
+// Project Card Component
 const ProjectCard = ({ project }) => {
   const [showDetails, setShowDetails] = useState(false);
+  const projectLink = project.gitHubLink || project.colabLink;
 
   return (
     <Card className="flex flex-col">
@@ -255,52 +194,63 @@ const ProjectCard = ({ project }) => {
           <h2 className="text-xl font-semibold text-indigo-700">{project.title}</h2>
           <p className="text-gray-700 mt-2">{project.description}</p>
 
+          {projectLink && (
+            <a
+              href={projectLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4"
+            >
+              <Button variant="outline" className="w-full">
+                View Project
+              </Button>
+            </a>
+          )}
+
           <button
             onClick={() => setShowDetails(!showDetails)}
-            className="mt-4 text-indigo-600 font-semibold hover:underline self-start"
+            className="mt-4 text-indigo-600 hover:text-indigo-800 font-semibold"
           >
             {showDetails ? "Hide Details ▲" : "Show Details ▼"}
           </button>
 
           {showDetails && (
-            <div className="mt-4 space-y-4 overflow-auto max-h-60">
+            <div className="mt-4 text-gray-700 flex flex-col gap-4 max-h-60 overflow-y-auto pr-2">
               <div>
-                <h3 className="font-semibold text-indigo-600 mb-2">Challenges Faced:</h3>
-                <ul className="list-disc list-inside text-gray-700">
-                  {project.challenges.map((challenge, cidx) => (
-                    <li key={cidx}>{challenge}</li>
+                <strong>Challenges:</strong>
+                <ul className="list-disc list-inside mt-1">
+                  {project.challenges.map((c, i) => (
+                    <li key={i}>{c}</li>
                   ))}
                 </ul>
               </div>
-
               <div>
-                <h3 className="font-semibold text-indigo-600 mb-2">How I Solved Them:</h3>
-                <ul className="list-disc list-inside text-gray-700">
-                  {project.solutions.map((solution, sidx) => (
-                    <li key={sidx}>{solution}</li>
+                <strong>Solutions:</strong>
+                <ul className="list-disc list-inside mt-1">
+                  {project.solutions.map((s, i) => (
+                    <li key={i}>{s}</li>
                   ))}
                 </ul>
               </div>
             </div>
           )}
         </div>
-
-        <div className="mt-6">
-          {(project.gitHubLink || project.colabLink) ? (
-            <a
-              href={project.gitHubLink || project.colabLink}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button>View Project</Button>
-            </a>
-          ) : (
-            <Button disabled>No Link Available</Button>
-          )}
-        </div>
       </CardContent>
     </Card>
   );
 };
+
+
+// Reusable Skill Card Component
+const SkillCard = ({ title, skills }) => (
+  <div className="bg-white p-6 shadow rounded-xl">
+    <h3 className="text-xl font-bold text-indigo-600 mb-4">{title}</h3>
+    <ul className="space-y-2">
+      {skills.map((skill, idx) => (
+        <li key={idx}>{skill}</li>
+      ))}
+    </ul>
+  </div>
+);
 
 export default Portfolio;
