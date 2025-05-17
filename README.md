@@ -4,7 +4,7 @@ Welcome to my personal portfolio website! This project showcases my skills, proj
 
 ---
 
-## 🚀 Features
+##  Features
 
 - **Fully built with React** using functional components and React hooks.
 - **Tailwind CSS** for modern, responsive, and utility-first styling.
@@ -22,7 +22,7 @@ Welcome to my personal portfolio website! This project showcases my skills, proj
 
 ---
 
-## 📁 Project Structure & Components
+##  Project Structure & Components
 
 - **Portfolio.jsx:** The main component assembling the entire portfolio page.
 - **ProjectCard Component:** Handles rendering of individual project details with toggle functionality.
@@ -34,7 +34,7 @@ Welcome to my personal portfolio website! This project showcases my skills, proj
 
 ---
 
-## 🛠️ Technologies & Libraries Used
+##  Technologies & Libraries Used
 
 - **React** (Functional Components, useState hook)
 - **Tailwind CSS** for utility-first responsive styling
@@ -44,7 +44,7 @@ Welcome to my personal portfolio website! This project showcases my skills, proj
 
 ---
 
-## 🎨 Styling Highlights
+##  Styling Highlights
 
 - Gradient backgrounds (`bg-gradient-to-br from-white to-blue-100`)
 - Responsive grid layouts (`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3`)
@@ -55,7 +55,7 @@ Welcome to my personal portfolio website! This project showcases my skills, proj
 
 ---
 
-## 🚀 How to Run Locally
+##  How to Run Locally
 
 1. **Clone the repo**
 
