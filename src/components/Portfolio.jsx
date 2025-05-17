@@ -61,40 +61,54 @@ const Portfolio = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white to-blue-100 p-6">
+    <div className="min-h-screen bg-gradient-to-br from-white to-blue-100 p-6 scroll-smooth">
+     {/* Navigation Bar */}
+<nav className="sticky top-0 z-50 bg-gradient-to-r from-indigo-600 to-blue-500 text-white shadow-md py-4 mb-10">
+  <div className="flex justify-center gap-6 font-semibold">
+    <a href="#education" className="hover:text-yellow-200 transition duration-300">Education</a>
+    <a href="#skills" className="hover:text-yellow-200 transition duration-300">Skills</a>
+    <a href="#projects" className="hover:text-yellow-200 transition duration-300">Projects</a>
+    <a href="#leadership" className="hover:text-yellow-200 transition duration-300">Leadership</a>
+    <a href="#interests" className="hover:text-yellow-200 transition duration-300">Interests</a>
+    <a href="#about" className="hover:text-yellow-200 transition duration-300">About</a>
+    <a href="#contact" className="hover:text-yellow-200 transition duration-300">Contact</a>
+  </div>
+  
+</nav>
+
+
       {/* Header */}
       <header className="flex flex-col items-center md:flex-row md:items-start md:justify-center gap-6 mb-10">
-  <img
-    src="\sameera-profile.jpg"
-    alt="Ragha Sameera Vasa"
-    className="w-32 h-32 rounded-full object-cover border-4 border-indigo-300 shadow-lg"
-  />
-  <div className="text-center md:text-left z-10">
-    <motion.h1
-      className="text-4xl font-extrabold text-indigo-800 tracking-tight mb-2"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.3, duration: 0.6 }}
-    >
-      Ragha Sameera Vasa
-    </motion.h1>
-    <motion.p
-      className="text-lg text-gray-700"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 0.8, duration: 0.6 }}
-    >
-      Frontend Developer | Full-Stack Learner | AI Explorer
-      {<p className="mt-2 text-sm md:text-base text-gray-600 max-w-xl">
-            Passionate about crafting engaging web experiences and building impactful digital solutions through the blend of creativity and code.
-          </p>}
-    </motion.p>
-   
-  </div>
-</header>
+        <img
+          src="\sameera-profile.jpg"
+          alt="Ragha Sameera Vasa"
+          className="w-32 h-32 rounded-full object-cover border-4 border-indigo-300 shadow-lg"
+        />
+        <div className="text-center md:text-left z-10">
+          <motion.h1
+            className="text-4xl font-extrabold text-indigo-800 tracking-tight mb-2"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+          >
+            Ragha Sameera Vasa
+          </motion.h1>
+          <motion.p
+            className="text-lg text-gray-700"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8, duration: 0.6 }}
+          >
+            Frontend Developer | Full-Stack Learner | AI Explorer
+            <p className="mt-2 text-sm md:text-base text-gray-600 max-w-xl">
+              Passionate about crafting engaging web experiences and building impactful digital solutions through the blend of creativity and code.
+            </p>
+          </motion.p>
+        </div>
+      </header>
 
       {/* Education */}
-      <section className="mb-16 max-w-4xl mx-auto">
+      <section id="education" className="mb-16 max-w-4xl mx-auto">
         <h2 className="text-3xl font-semibold text-indigo-700 text-center mb-8">Education</h2>
         <div className="bg-white p-6 shadow rounded-xl text-gray-800">
           <h3 className="text-xl font-bold text-indigo-600 mb-2">
@@ -112,7 +126,7 @@ const Portfolio = () => {
       </section>
 
       {/* Skills */}
-      <section className="mb-16 max-w-5xl mx-auto">
+      <section id="skills" className="mb-16 max-w-5xl mx-auto">
         <h2 className="text-3xl font-semibold text-indigo-700 text-center mb-8">Skills</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <SkillCard title="Frontend" skills={["HTML", "CSS", "JavaScript", "Web3.js — Intermediate", "React — Intermediate", "Tailwind CSS — Intermediate"]} />
@@ -124,7 +138,7 @@ const Portfolio = () => {
       </section>
 
       {/* Projects */}
-      <section className="mb-16 max-w-6xl mx-auto">
+      <section id="projects" className="mb-16 max-w-6xl mx-auto">
         <h2 className="text-3xl font-semibold text-indigo-700 text-center mb-8">Projects</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, idx) => (
@@ -134,7 +148,7 @@ const Portfolio = () => {
       </section>
 
       {/* Leadership & Volunteering */}
-      <section className="mb-16 max-w-4xl mx-auto">
+      <section id="leadership" className="mb-16 max-w-4xl mx-auto">
         <h2 className="text-3xl font-semibold text-indigo-700 text-center mb-8">
           Leadership & Volunteering
         </h2>
@@ -142,10 +156,7 @@ const Portfolio = () => {
           <div>
             <h3 className="text-xl font-bold text-indigo-600 mb-1">YES+ Club</h3>
             <p>
-              <strong>Secretary</strong> – Organized well-being and leadership
-              sessions for students. Promoted public speaking, emotional resilience,
-              and mindfulness among peers. Facilitated workshops and campus
-              activities to foster a growth mindset.
+              <strong>Secretary</strong> – Organized well-being and leadership sessions for students. Promoted public speaking, emotional resilience, and mindfulness among peers. Facilitated workshops and campus activities to foster a growth mindset.
             </p>
           </div>
           <div>
@@ -153,16 +164,14 @@ const Portfolio = () => {
               EduYouthMeet 2024
             </h3>
             <p>
-              <strong>Core Team Member & Organizer</strong> – Played a key role in
-              planning and executing South India's largest youth conference. Led
-              outreach initiatives, coordinated speakers and volunteers, and managed the event for nearly 40000 participants.
+              <strong>Core Team Member & Organizer</strong> – Played a key role in planning and executing South India's largest youth conference. Led outreach initiatives, coordinated speakers and volunteers, and managed the event for nearly 40000 participants.
             </p>
           </div>
         </div>
       </section>
 
       {/* Interests */}
-      <section className="mb-16 max-w-4xl mx-auto text-center">
+      <section id="interests" className="mb-16 max-w-4xl mx-auto text-center">
         <h2 className="text-3xl font-semibold text-indigo-700 mb-6">
           Personal Interests
         </h2>
@@ -172,21 +181,10 @@ const Portfolio = () => {
             activities that contribute to my personal growth:
           </p>
           <ul className="list-disc list-inside space-y-3">
-            <li>
-              <strong>Music:</strong> I enjoy a wide variety of music genres, which help me stay relaxed.
-            </li>
-            <li>
-              <strong>Kuchipudi Dance:</strong> I am learning Kuchipudi, a classical Indian dance form,
-              which allows me to explore rhythm, storytelling, and cultural heritage.
-            </li>
-            <li>
-              <strong>Reading:</strong> I have a passion for reading, ranging from technology updates
-              to interesting facts, which keeps me constantly learning.
-            </li>
-            <li>
-              <strong>Films:</strong> Watching films is a way for me to relax and gain new perspectives
-              by experiencing diverse stories and cultures.
-            </li>
+            <li><strong>Music:</strong> I enjoy a wide variety of music genres, which help me stay relaxed.</li>
+            <li><strong>Kuchipudi Dance:</strong> I am learning Kuchipudi, a classical Indian dance form.</li>
+            <li><strong>Reading:</strong> I have a passion for reading, ranging from technology to interesting facts.</li>
+            <li><strong>Films:</strong> Watching films is a way for me to relax and explore diverse stories and cultures.</li>
           </ul>
         </div>
       </section>
