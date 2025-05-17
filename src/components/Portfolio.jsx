@@ -117,7 +117,7 @@ const Portfolio = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <SkillCard title="Frontend" skills={["HTML", "CSS", "JavaScript", "Web3.js — Intermediate", "React — Intermediate", "Tailwind CSS — Intermediate"]} />
           <SkillCard title="Backend" skills={["Node.js — Intermediate", "Express.js — Intermediate", "REST API Development", "Firebase Authentication"]} />
-          <SkillCard title="AI / ML" skills={["Python — Intermediate", "Scikit-learn", "Pandas", "NumPy"]} />
+          <SkillCard title="AI / ML" skills={["Python — Intermediate", "Scikit-learn", "Pandas", "NumPy", "Data preprocessing"]} />
           <SkillCard title="Languages" skills={["C — Advanced", "Java — Advanced", "Python — Intermediate"]} />
           <SkillCard title="Tools" skills={["Git / GitHub", "Cursor", "Ethereum"]} />
         </div>
