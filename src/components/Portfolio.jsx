@@ -154,7 +154,8 @@ const Portfolio = () => {
             </h3>
             <p>
               <strong>Core Team Member & Organizer</strong> – Played a key role in
-              planning and executing one of the largest youth development events on campus.
+              planning and executing South India's largest youth conference. Led
+              outreach initiatives, coordinated speakers and volunteers, and managed the event for nearly 40000 participants.
             </p>
           </div>
         </div>
