@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Card, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
+import { motion } from "framer-motion";
 
 const Portfolio = () => {
   const projects = [
@@ -63,23 +64,34 @@ const Portfolio = () => {
     <div className="min-h-screen bg-gradient-to-br from-white to-blue-100 p-6">
       {/* Header */}
       <header className="flex flex-col items-center md:flex-row md:items-start md:justify-center gap-6 mb-10">
-        <img
-          src="\sameera-profile.jpg"
-          alt="Ragha Sameera Vasa"
-          className="w-32 h-32 rounded-full object-cover border-4 border-indigo-300 shadow-lg"
-        />
-        <div className="text-center md:text-left z-10">
-          <h1 className="text-4xl font-extrabold text-indigo-800 tracking-tight mb-2">
-            Ragha Sameera Vasa
-          </h1>
-          <p className="text-lg text-gray-700">
-            Frontend Developer | Full-Stack Learner | AI Explorer
-          </p>
-          <p className="mt-2 text-sm md:text-base text-gray-600 max-w-xl">
+  <img
+    src="\sameera-profile.jpg"
+    alt="Ragha Sameera Vasa"
+    className="w-32 h-32 rounded-full object-cover border-4 border-indigo-300 shadow-lg"
+  />
+  <div className="text-center md:text-left z-10">
+    <motion.h1
+      className="text-4xl font-extrabold text-indigo-800 tracking-tight mb-2"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.3, duration: 0.6 }}
+    >
+      Ragha Sameera Vasa
+    </motion.h1>
+    <motion.p
+      className="text-lg text-gray-700"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.8, duration: 0.6 }}
+    >
+      Frontend Developer | Full-Stack Learner | AI Explorer
+      {<p className="mt-2 text-sm md:text-base text-gray-600 max-w-xl">
             Passionate about crafting engaging web experiences and building impactful digital solutions through the blend of creativity and code.
-          </p>
-        </div>
-      </header>
+          </p>}
+    </motion.p>
+   
+  </div>
+</header>
 
       {/* Education */}
       <section className="mb-16 max-w-4xl mx-auto">
@@ -148,11 +160,11 @@ const Portfolio = () => {
         </div>
       </section>
 
+      {/* Interests */}
       <section className="mb-16 max-w-4xl mx-auto text-center">
         <h2 className="text-3xl font-semibold text-indigo-700 mb-6">
           Personal Interests
         </h2>
-
         <div className="bg-white p-6 shadow rounded-xl text-gray-800 text-left">
           <p className="mb-4">
             When I am not engaged in technology, I dedicate time to several enriching
@@ -177,7 +189,6 @@ const Portfolio = () => {
           </ul>
         </div>
       </section>
-
     </div>
   );
 };
@@ -188,7 +199,7 @@ const ProjectCard = ({ project }) => {
   const projectLink = project.gitHubLink || project.colabLink;
 
   return (
-    <Card className="flex flex-col">
+    <Card className="flex flex-col transition-transform duration-300 hover:scale-105 hover:shadow-xl">
       <CardContent className="flex flex-col h-full">
         <div className="flex-grow flex flex-col">
           <h2 className="text-xl font-semibold text-indigo-700">{project.title}</h2>
@@ -201,7 +212,7 @@ const ProjectCard = ({ project }) => {
               rel="noopener noreferrer"
               className="mt-4"
             >
-              <Button variant="outline" className="w-full">
+              <Button variant="outline" className="w-full hover:bg-indigo-100 hover:text-indigo-700 transition duration-300">
                 View Project
               </Button>
             </a>
@@ -209,7 +220,7 @@ const ProjectCard = ({ project }) => {
 
           <button
             onClick={() => setShowDetails(!showDetails)}
-            className="mt-4 text-indigo-600 hover:text-indigo-800 font-semibold"
+            className="mt-4 text-indigo-600 hover:text-indigo-800 hover:underline font-semibold transition duration-200"
           >
             {showDetails ? "Hide Details ▲" : "Show Details ▼"}
           </button>
@@ -240,14 +251,15 @@ const ProjectCard = ({ project }) => {
   );
 };
 
-
-// Reusable Skill Card Component
+// Skill Card Component
 const SkillCard = ({ title, skills }) => (
-  <div className="bg-white p-6 shadow rounded-xl">
+  <div className="bg-white p-6 shadow rounded-xl transition-transform duration-300 hover:shadow-md hover:scale-[1.02]">
     <h3 className="text-xl font-bold text-indigo-600 mb-4">{title}</h3>
     <ul className="space-y-2">
       {skills.map((skill, idx) => (
-        <li key={idx}>{skill}</li>
+        <li key={idx} className="hover:text-indigo-600 transition duration-200">
+          {skill}
+        </li>
       ))}
     </ul>
   </div>
